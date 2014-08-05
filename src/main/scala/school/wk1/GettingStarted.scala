@@ -1,4 +1,4 @@
-package net.room271.wk1
+package school.wk1
 
 object GettingStarted {
 
