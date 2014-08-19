@@ -109,7 +109,7 @@ object Lists {
   def shortStrings(strings: List[String], length: Int): List[String] = ???
 
   // Recursion
-  // tail - returns the
+  // tail - returns the list with the head removed
   // Use isEmpty or list == Nil to terminate a list
   // fold[A, Z](Z)((Z, A) => Z) - can be used in place of recursion
 
@@ -124,6 +124,11 @@ object Lists {
     else list.head + sum(list.tail)
   }
 
+  /**
+   * Recursively 'walks' the list of Ints multiplying them together to calculate the product.
+   * @param list
+   * @return the product of the list elements
+   */
   def product(list: List[Int]): Int = ???
 
   // Hard!
@@ -134,8 +139,13 @@ object Lists {
    */
   def maxValue(list: List[Int]): Int = ???
 
+  /**
+   * Calculate the sum of a list of Ints using foldLeft
+   * @param list
+   * @return
+   */
   def foldSum(list: List[Int]): Int ={
-    list.fold(0){ case (total, i) => total + i}
+    list.foldLeft(0){ case (total, i) => total + i}
   }
 
 
