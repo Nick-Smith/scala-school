@@ -145,8 +145,8 @@ object RationalNumbers {
   val halfFloat = half.numerator.toFloat / half.denominator.toFloat
 
   // Scala offers a simpler way to achieve this with Properties.
-  class RandomVals(val numerator: Int, val denominator: Int) // the val keyword here makes the constructor arg publicly visible
-  val third = new RandomVals(1, 3)
+  class RationalVals(val numerator: Int, val denominator: Int) // the val keyword here makes the constructor arg publicly visible
+  val third = new RationalVals(1, 3)
   val thirdFloat = third.numerator.toFloat / third.denominator.toFloat
 
   // Case classes are a special type of class which give you a few things for free:
@@ -159,8 +159,6 @@ object RationalNumbers {
   val twoThirds = Rational(2, 3)//Special constructor
   val twoThirdsFloat = twoThirds.numerator.toFloat / twoThirds.denominator.toFloat
 
-  // You can also make case objects, singleton versions of a case class:
-  case object One extends Rational(1, 1)
 }
 
 // Guidelines
