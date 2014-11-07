@@ -50,8 +50,8 @@ class ListsTest extends FlatSpec with Matchers{
 
   it should "multiply all elements in a list by an arbitrary Int" in {
     import Lists._
-//    times(ints, 5) should be(5, 10, 15)
-//    times(zeroInts, 2) should be(0, 2, 4, 6)
+    times(ints, 5) should be(5, 10, 15)
+    times(zeroInts, 2) should be(0, 2, 4, 6)
   }
 
   it should "filter out Strings above a certain length" in {

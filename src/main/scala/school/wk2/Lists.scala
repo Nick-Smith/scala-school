@@ -4,7 +4,7 @@ object Lists {
 
   // Constructing Lists
 
-  // Construct a simple list of Int
+  // Construct a simple list of Ints
   // Note the type paramater in [], specifying that this List is of type Int.
   val ints : List[Int] = List(1, 2, 3)
 
@@ -37,6 +37,7 @@ object Lists {
    */
   def max[A](l1: List[A], l2: List[A]): List[A] = if(l1.size >= l2.size) l1 else l2
 
+  //TODO implement the function min which returns the smaller of 2 lists.
   def min[A](l1: List[A], l2: List[A]): List[A] = ???
 
   /**
@@ -66,6 +67,7 @@ object Lists {
     elem.toString
   }
 
+  //TODO implement the function isEqual which compares the ith element of two lists
   /**
    * Compares the ith element of 2 lists and decides if they are equal or not.
    * Note, equality can be determined by using <code>a == b<code>
@@ -99,6 +101,7 @@ object Lists {
     list filter isEven // Same as list.filter(isEven)
   }
 
+  //TODO implement shortStrings
   /**
    * Removes all strings whose length is greater than <code>length<code>
    *   Note String.length returns the length of a string.
@@ -110,12 +113,11 @@ object Lists {
 
   // Recursion
   // tail - returns the list with the head removed
-  // Use isEmpty or list == Nil to terminate a list
-  // fold[A, Z](Z)((Z, A) => Z) - can be used in place of recursion
+  // Use isEmpty or list == Nil to terminate a recursion
+  // foldLeft[A, Z](Z)((Z, A) => Z) - can be used in place of recursion
 
   /**
    * Recursively 'walks' the list of Ints adding them up to calculate the sum.
-   * @param list
    * @return the sum of the list elements
    */
   def sum(list: List[Int]): Int ={
@@ -124,6 +126,7 @@ object Lists {
     else list.head + sum(list.tail)
   }
 
+  //TODO Implement product
   /**
    * Recursively 'walks' the list of Ints multiplying them together to calculate the product.
    * @param list
@@ -131,13 +134,12 @@ object Lists {
    */
   def product(list: List[Int]): Int = ???
 
+  //TODO implement maxValue
   // Hard!
   /**
    * Finds the largest value in a list of Ints
-   * @param list
-   * @return
    */
-  def maxValue(list: List[Int]): Int = ???
+  def maxValue(list: List[Int]): Int =  ???
 
   /**
    * Calculate the sum of a list of Ints using foldLeft
@@ -148,5 +150,5 @@ object Lists {
     list.foldLeft(0){ case (total, i) => total + i}
   }
 
-
+  //TODO Re-implement product and maxValue using foldLeft
 }

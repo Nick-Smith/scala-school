@@ -16,7 +16,7 @@ object Animals {
     def message = "I go tweet tweet"
   }
 
-  // We can generalize this behaviour into a trait Animal:
+  // We can generalize this behaviour into a class Animal:
   class Animal(call: String){ // Note Animal has a constructor which takes the String parameter 'call'.
     def message = "I go " + call
   }
