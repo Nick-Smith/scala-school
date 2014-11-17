@@ -130,7 +130,7 @@ object Animals {
     val swimSpeed = 10
   }
 
-  Frog.jumpsFartherThan()
+  Frog.jumpsFartherThan(10)
   Frog.swimsFasterThan(10)
 
   // But wait! WHAT ABOUT THE PENGUIN????!
