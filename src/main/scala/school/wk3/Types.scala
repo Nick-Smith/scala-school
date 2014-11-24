@@ -17,10 +17,12 @@ object Animals {
   // objects are singletons, there is only ever one instance of each object.
 
   // We can generalize this behaviour into a class Animal:
-  class Animal(isPredator: Boolean) {
+  class Animal(predator: Boolean) {
+
+    val isPredator = predator
     // Note Animal has a constructor which takes the Boolean parameter 'isPredator'.
     def behaviour(animal: Animal): String = {
-      if (isPredator)
+      if (this.isPredator)
         if (animal.isPredator) "Get lost!" else "Dinner Time!"
       else
       if (animal.isPredator) "Run Away!" else "Hey There!"
@@ -137,7 +139,7 @@ object Animals {
   // Penguins are birds that can swim but can't fly!
   // Sure we could set the flySpeed to 0 but that still gives an unhelpful result for isFasterThan.
 
-  // Solution: override the flyMessage method!
+  // Solution: override the isFasterThan method!
   class Penguin extends Bird(true) with Swimmer {
     val swimSpeed = 20
     val flightSpeed = 0
@@ -209,13 +211,12 @@ object RationalNumbers {
 // - Traits are more extensible than other types so try to always put shared behaviour in them.
 // - Case classes are an excellent way of storing structured data and give you a lot of useful functionality for free.
 // - Any time you have a general-purpose function that doesn't belong on a method put it in an object.
-// - Avoid using objects for anything with side effects(e.g. any type of IO or state), they are not extensible so they are very hard to test.
+// - Avoid directly referencing objects for anything with side effects(e.g. any type of IO or state), they are not extensible so they are very hard to test.
 
 // Exercises
 //
-// 1) Write a new function in Animal that prints out the animal's message.
-//    Will this function work for all of the objects and vals specified in Animals?
-//
-// 2) How would you add a 'toFloat' method to all of the Rational classes above?
+// 1) How would you add a 'toFloat' method to all of the Rational classes above (RationalNum, RationalVal and Rational)?
 // Your solution should only require one definition of the toFloat method, not one per class.
 //
+// 2) How would you implement the operations * and / on Rational, taking another Rational as a parameter?
+// Don't worry about normalizing the result, ie.e Rational(1/3) * Rational (3/2) = Rational(3/6)

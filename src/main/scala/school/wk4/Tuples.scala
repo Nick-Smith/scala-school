@@ -50,9 +50,9 @@ object Tuples {
   val (threeInt, _ , threeStr) = triple
 
   /**
-   * User powersOf to create a String of the format
+   * Use powersOf to create a String of the format
    * "The powers of 2 are square: 4, cube: 8, 4th power: 16"
-   * You should be able to do this in a 2-line method using the val (x, y) notation.
+   * You should be able to do this in a 2-line method using the val (x, y, z) notation.
    * @param i
    * @return
    */

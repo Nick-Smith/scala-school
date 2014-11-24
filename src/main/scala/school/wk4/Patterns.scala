@@ -60,8 +60,6 @@ object Patterns {
 
   // You can match on tuples!
 
-  import Tuples._
-
   /**
    * Returns a String for pairs in a nice 'a -> b' format.
    * @param t the value to convert to String
@@ -83,11 +81,10 @@ object Patterns {
 
   case class Person(name: String, age: Int)
 
+  private val students = List("Phil", "Josh", "Alessandro", "Mark", "Luke")
   def schoolRole(p: Person): String = p match {
     case Person("Nick", _) => "Teacher"
-    case Person("Robin", _) => "Student"
-    case Person("Stephan", _) => "Student"
-    case Person("Stuart", _) => "Student"
+    case Person(name, _) if students contains name => "Student"
     case _ => "You're in the wrong class!"
   }
 
