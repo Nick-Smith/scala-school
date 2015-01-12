@@ -42,13 +42,15 @@ object Errors {
     var isOpen = true
 
     def read(): String = throw new MyException("Boom!")
-    def close() { isOpen == false }
+    def close() { isOpen = false }
   }
 
   // Reads from the connection and guarantees the connection is closed even if an exception is thrown.
   def safeRead(c: Connection): String = {
     try {
-      c.read()
+      val msg = c.read()
+      c.close()
+      msg
     }
     catch {
       case e: Exception => "Error reading from connection!"
