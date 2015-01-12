@@ -1,7 +1,7 @@
-package school.wk4
+package school.wk5
 
-import org.scalatest.{Matchers, FlatSpec}
-import Patterns._
+import org.scalatest.{FlatSpec, Matchers}
+import school.wk5.Patterns._
 
 class PatternsTest extends FlatSpec with Matchers {
 
